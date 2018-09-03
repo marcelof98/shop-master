@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sistema</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <header>
+    <h1>Sitema de Login e Cadastro</h1>
+  </header>
+  <body>
+    <div id="user_header">
+      <% if current_user %>
+
+      <% else %>
+        <%= link_to "Sign Up", signup_path %> or
+        <%= link_to "Log in", login_path %>
+      <% end %>
+    </div>
+  </body>
+</html>

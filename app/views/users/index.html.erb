@@ -1,0 +1,27 @@
+<% if current_user == nil %>
+    <p>YOU ARE DON'T LOGGED!</p>
+    <%= link_to 'Back', root_url %>
+<% else %>
+    <h1>Listing Users</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= link_to 'Show', user %></td>
+            <td><%= link_to 'Edit', edit_user_path(user) %></td>
+            <td><%= link_to 'Destroy', user, method: :delete, date: { confirm: "Are you sure?"  } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% end %>
