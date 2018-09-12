@@ -5,6 +5,39 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  overflow: hidden;
+}
+
+section{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#nav{
+    width: 20%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 15px;
+    background:	#DCDCDC;
+    box-shadow: 5px 5px #A9A9A9;
+}
+
+header{
+    height: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    color: #A9A9A9;
+}
+
+.botao{
+    float: right;
+    position: absolute;
+    bottom: 55px;
 }
 
 p, ol, ul, td {

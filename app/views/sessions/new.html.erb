@@ -1,19 +1,59 @@
-<h1>Login</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sistema</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <section>
+        <div id=nav>
+            <header>
+              <h1>login</h1>
+            </header>
+            <%= form_tag sessions_path do %>
 
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :email %><br>
-    <%= text_field_tag :email %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br>
-    <%= password_field_tag :password %>
-  </div>
-  <div class="actions">
-    <%= submit_tag "Login" %>
-  </div>
-<% end %>
-<% if current_user %>
-    <%= link_to 'Users', users_path %>
-<% end %>
-<%= link_to 'Back', root_url %>
+              <div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-button--primary">
+                <input class="mdl-textfield__input" type="text" <%= text_field_tag :email %>
+                    <label class="mdl-textfield__label"><%= label_tag :email %></label>
+                </input>
+              </div>
+              <br>
+              <div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-button--primary">
+                <input class="mdl-textfield__input" type="password" <%= password_field_tag :password %>
+                    <label class="mdl-textfield__label "><%= label_tag :password %></label>
+                </input>
+              </div>
+
+                <!--
+                  <div class="field">
+                    <%= label_tag :email %>
+                    <%= text_field_tag :email %>
+                  </div>
+                -->
+                <!--
+                  <div class="field">
+                    <%= label_tag :password %><br>
+                    <%= password_field_tag :password %>
+                  </div>
+                -->
+              <div class="actions">
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary">
+                    ENTRAR
+                </button>
+              </div>
+              <!-- Colored FAB button with ripple -->
+
+            <% end %>
+            <% if current_user %>
+                <%= link_to 'Users', users_path %>
+            <% end %>
+            <button class="botao mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                <i class ="material-icons" <%= link_to 'arrow_back', root_url %>
+            </button>
+            <!--<%= link_to 'arrow_back', root_url %>-->
+        </div>
+    </section>
+  </body>
+</html>

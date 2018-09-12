@@ -7,16 +7,28 @@
     <%= csrf_meta_tags %>
   </head>
   <header>
-    <h1>Sitema de Login e Cadastro</h1>
+    <h1>oi amiguinho</h1>
   </header>
   <body>
     <div id="user_header">
       <% if current_user %>
-
+        <%= index %>
       <% else %>
-        <%= link_to "Sign Up", signup_path %> or
-        <%= link_to "Log in", login_path %>
+        <%= link_to signup_path do %>
+          <button class="mdl-button mdl-js-button mdl-button--accent">
+            Cadastro
+          </button>
+        <% end %>
+        <%= link_to login_path do %>
+          <button class="mdl-button mdl-js-button mdl-button--primary">
+            Login
+          </button>
+        <% end %>
       <% end %>
     </div>
   </body>
 </html>
+<!--
+
+<%= link_to "Login", login_path %>
+-->
